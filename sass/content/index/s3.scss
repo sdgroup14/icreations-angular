@@ -1,0 +1,139 @@
+.secondary-nav {
+  background-color: $white-d;
+  .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .main {
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    .main-item {
+      display: inline-block;
+      margin: 0 5.1%;
+      &:hover span {
+        color: $blue-l;
+        transform: scale(1.1);
+      }
+    }
+    .main-item:first-of-type {
+      margin-left: 0;
+    }
+    .main-item:last-of-type {
+      margin-right: 0;
+    }
+    .helper {
+      text-align: left;
+    }
+    .img {
+      margin: 0 auto;
+      min-height: 69px;
+      margin-bottom: 12px;
+      &:before {
+        display: inline-block;
+        content: '';
+        width: 0.01%;
+        height: 100%;
+        background-color: transparent;
+        vertical-align: middle;
+        visibility: hidden;
+      }
+      &:after {
+        display: inline-block;
+        @extend %sprite;
+        vertical-align: middle;
+      }
+    }
+    $position: 48.233% 74.592%,
+    10.345% 73.852%,
+    88.779% 73.601%,
+    10.594% 100%,
+    48.25% 96.416%;
+    $w: 55px,
+    76px,
+    77px,
+    69px,
+    52px;
+    $h: 66px,
+    58px,
+    55px,
+    69px,
+    48px;
+    @for $i from 1 through length($position) {
+      .img-#{$i} {
+        &:after {
+          background-position: nth($position, $i);
+        }
+      }
+    }
+    @for $i from 1 through length( $w) {
+      .img-#{$i} {
+        width: nth($w, $i);
+        &:after {
+          width: nth($w, $i);
+        }
+      }
+    }
+    @for $i from 1 through length($h) {
+      .img-#{$i} {
+        height: nth($h, $i);
+        &:after {
+          height: nth($h, $i);
+        }
+      }
+    }
+    span {
+      display: inline-block;
+      color: $grey;
+      text-transform: uppercase;
+      line-height: 18px;
+      @extend %px13;
+      letter-spacing: 0.33px;
+      transition: all .1s ease-out;
+    }
+  }
+}
+
+@mixin media_768_index_s3 {
+  .secondary-nav {
+    .container {
+      padding-top: 54px;
+      padding-bottom: 54px;
+    }
+    .main {
+      .main-item {
+        margin: 0 3.5%;
+      }
+    }
+  }
+}
+
+@mixin media_320_index_s3 {
+  .secondary-nav {
+    .container {
+      padding-top: 54px;
+      padding-bottom: 54px;
+    }
+    .main {
+      .main-item {
+        display: block;
+        float: left;
+        margin: 0;
+        min-height: 118px;
+        width: 49%;
+        margin-bottom: 16px;
+      }
+      .main-item:last-of-type {
+        margin-bottom: 0;
+      }
+      .helper {
+        text-align: left;
+        span {
+          width: 76px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

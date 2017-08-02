@@ -1,0 +1,203 @@
+.contacts-s2 {
+  padding-top: 48px;
+  padding-bottom: 62px;
+  h1 {
+    color: $blue-d;
+    @extend %px18;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 26px;
+  }
+  .form-block {
+    width: 432px;
+    margin: 0 auto;
+  }
+  label {
+    position: relative;
+    display: block;
+    .inp-placeholder {
+      position: absolute;
+      display: block;
+      left: 50%;
+      margin-left: -50px;
+      top: 0;
+      @extend %px13;
+      line-height: 18px;
+      letter-spacing: 0.33px;
+      text-align: center;
+      width: 100px;
+      color: $blue-d;
+      z-index: 5;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+    }
+    .inp-placeholder-active {
+      top: -15px;
+      color: $blue-l;
+      font-size: 10px;
+    }
+    .inp-error-wrapper{
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 10; 
+      transition: all .15s linear;
+      visibility: hidden;
+      opacity: 0;
+      
+    }
+      .inp-error-wrapper-active{
+            visibility: visible;
+            opacity: 1;
+
+          }
+
+    .inp-error{
+      position: relative;
+      display: inline-block;
+      @extend %px12;
+      padding: 0 10px;
+      border-radius: 3px;
+      color: #ffffff;
+      line-height: 20px;
+      background-color: #FF0037;
+
+      &:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #FF0037;;
+  border-width: 4px;
+  margin-left: -4px;
+}
+    }
+
+
+  }
+  .inp {
+    display: block;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    margin-bottom: 45px;
+    border-bottom: 1px solid $grey-l;
+    z-index: 1;
+    min-height: 24px;
+    text-align: center;
+    @extend %px13;
+    line-height: 18px;
+    letter-spacing: 0.33px;
+    color: $blue-d;
+    &:focus {
+      border-bottom: 1px solid $blue-l;
+    }
+  }
+  textarea.inp {
+    overflow: hidden;
+    resize: none;
+    transition: height .1s linear;
+  }
+  label:last-of-type .inp {
+    margin-bottom: 36px;
+  }
+  .form-btns {
+    margin-top: 10px;
+  }
+  .btn-send {
+    background-color: $blue-l;
+    @extend %px13;
+    padding: 0 15px;
+    width: 157px;
+    border-radius: 3px;
+    line-height: 32px;
+    letter-spacing: 0.33px;
+    color: $white-l;
+    margin: 0 auto;
+
+    &:hover {
+      background-color: $blue-d;
+    }
+    span {
+      vertical-align: middle;
+    }
+    .sucsess,
+    .fail {
+      display: none;
+      stroke: #ffffff;
+      fill: transparent;
+      vertical-align: middle;
+    }
+    .sucsess {
+      width: 15px;
+      height: 11px;
+    }
+    .sucsess-active {
+      display: inline-block;
+    }
+    .fail {
+      width: 13px;
+      height: 13px;
+    }
+    .fail-active {
+      display: inline-block;
+    }
+    .loader {
+      display: none;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: middle;
+    }
+    .loader-active {
+      display: inline-block;
+    }
+  }
+  .spinner {
+    display: inline-block;
+    opacity: 0;
+    width: 0;
+    -webkit-transition: opacity 0.25s, width 0.25s;
+    -moz-transition: opacity 0.25s, width 0.25s;
+    -o-transition: opacity 0.25s, width 0.25s;
+    transition: opacity 0.25s, width 0.25s;
+  }
+  .has-spinner.active {
+    cursor: progress;
+  }
+  .has-spinner.active .spinner {
+    opacity: 1;
+    width: auto;
+  }
+  .has-spinner.btn.active .spinner {
+    min-width: 20px;
+  }
+}
+
+@mixin media_768_contacts_s2 {}
+
+@mixin media_320_contacts_s2 {
+  .contacts-s2 {
+    padding-top: 40px;
+    padding-bottom: 66px;
+    .form-block {
+      width: 100%;
+      max-width: 432px;
+    }
+  }
+}

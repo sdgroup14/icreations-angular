@@ -1,0 +1,110 @@
+.clients-s1 {
+  background-color: $grey-l2;
+  .container {
+    padding: 70px 0;
+    min-height: 335px;
+  }
+  .big-img {
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 938px;
+    .img-mob {
+      display: none;
+    }
+  }
+  .big-img-sign {
+    text-align: center;
+    margin: 0 auto 0 18%;
+    .sign-h1-block {
+      display: inline-block;
+      position: relative;
+      text-align: right;
+      vertical-align: top;
+      margin-right: 3%;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -13px;
+        width: 35px;
+        height: 1px;
+        background-color: $white-l;
+      }
+      h1 {
+        @extend %px18;
+        line-height: 22px;
+        letter-spacing: 0.45px;
+        color: $white;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+    .sign-txt-block {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      margin-right: 2%;
+      p {
+        @extend %px13;
+        color: $white-l;
+        line-height: 21px;
+        letter-spacing: 0.33px;
+      }
+    }
+  }
+}
+
+@mixin media_768_clients_s1 {
+  .clients-s1 {
+    .container {
+      padding: 56px 0;
+      min-height: 314px;
+    }
+    .big-img {
+      width: 100%;
+    }
+    .big-img-sign {
+      margin: 0 auto;
+    }
+  }
+}
+
+@mixin media_320_clients_s1 {
+  .clients-s1 {
+    .container {
+      padding: 41px 5.15%;
+    }
+    .big-img {
+      width: 100%;
+      .img-mob {
+        display: block;
+        margin: 0 auto;
+        max-height: 202px;
+      }
+      .img-desc {
+        display: none;
+      }
+    }
+    .big-img-sign {
+      margin: 0 auto;
+      .sign-h1-block {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 6px;
+        &:after {
+          display: none;
+        }
+      }
+      .sign-txt-block {
+        display: block;
+        text-align: center;
+        p {
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}

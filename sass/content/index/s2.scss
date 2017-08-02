@@ -1,0 +1,202 @@
+.s2 {
+  background-color: $white-d;
+  .container {
+    padding: 0;
+  }
+  .offer-item {
+    width: 50%;
+    float: left;
+    background-color: $of-bg2;
+    padding: 38px 38px 29px;
+    min-height: 266px;
+    figure {
+      text-align: center;
+      margin-bottom: 9px;
+      min-height: 100px;
+    }
+    .offer-img {
+      display: inline-block;
+      vertical-align: middle;
+      &:after {
+        @extend %sprite;
+      }
+    }
+    $position: 11.224% 1.811%,
+    96.79% 3.137%,
+    0 43.217%,
+    86.122% 42.739%;
+    $w: 135px,
+    178px,
+    190px,
+    117px;
+    $h: 93px,
+    86px,
+    83px,
+    100px;
+    @for $i from 1 through length($position) {
+      .offer-img-#{$i} {
+        &:after {
+          background-position: nth($position, $i);
+        }
+      }
+    }
+    @for $i from 1 through length( $w) {
+      .offer-img-#{$i} {
+        width: nth($w, $i);
+        &:after {
+          width: nth($w, $i);
+        }
+      }
+    }
+    @for $i from 1 through length($h) {
+      .offer-img-#{$i} {
+        height: nth($h, $i);
+        &:after {
+          height: nth($h, $i);
+        }
+      }
+    }
+    h2 {
+      display: inline-block;
+      @extend %px18;
+      color: $blue-l;
+      font-weight: 400;
+      letter-spacing: 0.45px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      text-align: left;
+      margin-left: 21px;
+    }
+    p {
+      text-align: center;
+      @extend %px13;
+      line-height: 18px;
+      letter-spacing: 0.33px;
+      color: $grey;
+      text-align: center;
+    }
+    .show-more-ico,
+    .show-more {
+      display: none;
+    }
+  }
+  .offer-item:nth-child(3n+1) {
+    background-color: $of-bg1;
+  }
+}
+
+@mixin media_768_index_s2 {
+  .s2 {
+    .offer-item {
+      padding: 46px 38px 46px;
+      min-height: 383px;
+      .offer-img {
+        display: block;
+        width: 100%;
+        margin-bottom: 17px;
+        min-height: 100px;
+      }
+      h2 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+      }
+      .show-more-ico,
+      .show-more {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin media_320_index_s2 {
+  .s2 {
+    .offer-item {
+      width: 100%;
+      padding: 37px 38px 29px;
+      min-height: 0;
+      .offer-img {
+        display: block;
+        width: 100%;
+        margin-bottom: 17px;
+        min-height: 100px;
+      }
+      h2 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 23px;
+      }
+      .show-more {
+        display: block;
+        margin: 0 auto;
+        background-color: $blue-l;
+        color: $white-d;
+        padding: 0 16px;
+        border-radius: 4px;
+        line-height: 24px;
+      }
+      .show-more-hide {
+        visibility: hidden;
+        transform: scale(0);
+        opacity: 0;
+        height: 0;
+      }
+      .show-more-active {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+        transition: all .15s linear;
+        height: 100%;
+      }
+      .show-more-ico {
+        display: block;
+        margin: 0 auto;
+        width: 34px;
+        height: 24px;
+        transform: scale(0);
+        background-color: $blue-l;
+        border-radius: 4px;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        svg {
+          width: 12px;
+          height: 24px;
+          margin: 0 auto;
+          display: inline-block;
+          fill: none;
+          stroke: $white-d;
+        }
+      }
+      .show-more-ico-active {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+        transition: all .15s linear;
+      }
+    }
+    .offer-item:nth-child(odd) {
+      background-color: $of-bg1;
+    }
+    .offer-item:nth-child(even) {
+      background-color: $of-bg2;
+    }
+  }
+  .offer-txt {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: all .15s linear;
+  }
+  .offer-txt-active {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    margin-bottom: 23px;
+  }
+}

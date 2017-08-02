@@ -1,0 +1,255 @@
+.capabilities-s2 {
+  background-color: $white-d;
+  .container {
+    padding: 0;
+  }
+  .offer-item {
+    width: 33.33%;
+    float: left;
+    padding: 74px 0 58px;
+    min-height: 285px;
+    text-align: center;
+    figure {
+      text-align: center;
+      margin-bottom: 9px;
+      min-height: 100px;
+    }
+    .offer-img {
+      display: inline-block;
+      vertical-align: top;
+      &:after {
+        @extend %sprite-2;
+      }
+    }
+    $position: 67.511% 0,
+    36.437% 0,
+    0 100%,
+    0 67.695%,
+    0 0,
+    97.166% 30.769%,
+    100% 0,
+    0 39.148%,
+    30.364% 67.28%;
+    $w: 75px,
+    65px,
+    56px,
+    70px,
+    85px,
+    65px,
+    72px,
+    84px,
+    65px;
+    $h: 74px,
+    91px,
+    74px,
+    67px,
+    92px,
+    63px,
+    71px,
+    63px,
+    66px;
+    @for $i from 1 through length($position) {
+      .offer-img-#{$i} {
+        &:after {
+          background-position: nth($position, $i);
+        }
+      }
+    }
+    @for $i from 1 through length( $w) {
+      .offer-img-#{$i} {
+        width: nth($w, $i);
+        &:after {
+          width: nth($w, $i);
+        }
+      }
+    }
+    @for $i from 1 through length($h) {
+      .offer-img-#{$i} {
+        height: nth($h, $i);
+        &:after {
+          height: nth($h, $i);
+        }
+      }
+    }
+  }
+  .offer-item:nth-child(even) {
+    background-color: $of-bg2;
+  }
+  .offer-item:nth-child(odd) {
+    background-color: $of-bg1;
+  }
+  .offer-cont {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 23px;
+    text-align: left;
+  }
+  .offer-head {
+    display: inline-block;
+    color: $blue-d;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+    @extend %px18;
+    margin-bottom: 7px;
+  }
+  .offer-l-item {
+    color: $grey-l;
+    line-height: 18px;
+    letter-spacing: 0.33px;
+    @extend %px13;
+  }
+}
+
+@mixin media_768_capabilities_s2 {
+  .capabilities-s2 {
+    .container {
+      padding: 0;
+    }
+    .offer-item {
+      padding: 36px 0 41px;
+      min-height: 227px;
+      .offer-img {
+        &:after {
+          @extend %sprite-2-1;
+        }
+      }
+      $position: 100% 0,
+      0 0,
+      0 63.941%,
+      100% 41.077%,
+      66.667% 0,
+      33.333% 0,
+      63.492% 58.703%,
+      0 100%,
+      30.159% 58.904%;
+      $w: 58px,
+      58px,
+      52px,
+      58px,
+      58px,
+      58px,
+      58px,
+      58px,
+      58px;
+      $h: 56px,
+      81px,
+      70px,
+      56px,
+      63px,
+      56px,
+      58px,
+      44px,
+      58px;
+      @for $i from 1 through length($position) {
+        .offer-img-#{$i} {
+          &:after {
+            background-position: nth($position, $i);
+          }
+        }
+      }
+      @for $i from 1 through length( $w) {
+        .offer-img-#{$i} {
+          width: nth($w, $i);
+          &:after {
+            width: nth($w, $i);
+          }
+        }
+      }
+      @for $i from 1 through length($h) {
+        .offer-img-#{$i} {
+          height: nth($h, $i);
+          &:after {
+            height: nth($h, $i);
+          }
+        }
+      }
+    }
+    .offer-cont {
+      margin-left: 10px;
+    }
+    .offer-head {
+      font-size: 16px;
+    }
+  }
+}
+
+@mixin media_320_capabilities_s2 {
+  .capabilities-s2 {
+    .container {
+      padding: 0;
+    }
+    .offer-item {
+      width: 100%;
+      float: none;
+      padding: 30px 0;
+      min-height: auto;
+      text-align: left;
+      .offer-img {
+        &:after {
+          @extend %sprite-2-1-m;
+        }
+      }
+      $position: 100% 0,
+      0 0,
+      0 63.941%,
+      100% 41.077%,
+      66.667% 0,
+      33.333% 0,
+      63.492% 58.703%,
+      0 100%,
+      30.159% 58.904%;
+      $w: 58px,
+      58px,
+      52px,
+      58px,
+      58px,
+      58px,
+      58px,
+      58px,
+      58px;
+      $h: 56px,
+      81px,
+      70px,
+      56px,
+      63px,
+      56px,
+      58px,
+      44px,
+      58px;
+      @for $i from 1 through length($position) {
+        .offer-img-#{$i} {
+          &:after {
+            background-position: nth($position, $i);
+          }
+        }
+      }
+      @for $i from 1 through length( $w) {
+        .offer-img-#{$i} {
+          width: nth($w, $i);
+          &:after {
+            width: nth($w, $i);
+          }
+        }
+      }
+      @for $i from 1 through length($h) {
+        .offer-img-#{$i} {
+          height: nth($h, $i);
+          &:after {
+            height: nth($h, $i);
+          }
+        }
+      }
+    }
+    .offer-item-wrapper {
+      width: 320px;
+      margin: 0 auto;
+      padding-left: 50px;
+    }
+    .offer-cont {
+      margin-left: 18px;
+    }
+    .offer-head {
+      font-size: 16px;
+    }
+  }
+}

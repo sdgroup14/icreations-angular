@@ -1,0 +1,185 @@
+.works-s1 {
+  .container {
+    padding: 0;
+  }
+  .works-item {
+    position: relative;
+    max-height: 205px;
+    width: 20%;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .work-name-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      transition: all .15s linear;
+      opacity: 1;
+      visibility: visible;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: .001%;
+        height: 205px;
+        vertical-align: middle;
+        visibility: hidden;
+        opacity: 0;
+        background-color: transparent;
+      }
+    }
+    .work-name {
+      display: inline-block;
+      margin: 0 auto;
+      color: $white-l;
+      background-color: $blue-d;
+      border-radius: 4px;
+      @extend %px12;
+      letter-spacing: 0.3px;
+      line-height: 20px;
+      padding: 0 5px;
+      vertical-align: middle;
+    }
+    .works-item-tint {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(2, 30, 52, .55);
+      opacity: 0;
+      visibility: hidden;
+      transition: all .15s linear;
+      text-align: center;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: .001%;
+        height: 205px;
+        vertical-align: middle;
+        visibility: hidden;
+        opacity: 0;
+        background-color: transparent;
+      }
+      .icon-box {
+        width: 45px;
+        height: 46px;
+        fill: $white;
+        vertical-align: middle;
+      }
+    }
+    &:hover .works-item-tint {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:hover .work-name-wrap {
+      transition: all .15s linear;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  .gallery {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100.1%;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .2s linear;
+    visibility: hidden;
+    z-index: 10;
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .gal-btns {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      z-index: 11;
+      text-align: center;
+      width: 100%;
+      .btns-l-item {
+        position: relative;
+        display: inline-block;
+        background-color: $blue-d;
+        opacity: .6;
+        color: $white;
+        height: 30px;
+        padding: 0 15px;
+        @extend %px13;
+        line-height: 30px;
+        letter-spacing: 0.33px;
+        vertical-align: middle;
+        cursor: pointer;
+        margin: 0 13px;
+        &:hover {
+          opacity: 1;
+        }
+        a {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .icon-box {
+        width: 7px;
+        height: 30px;
+        fill: none;
+        stroke: $white;
+      }
+    }
+  }
+  .gallery-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@mixin media_768_works_s1 {
+  .works-s1 {
+    .works-item {
+      max-height: 192px;
+      width: 25%;
+      .work-name-wrap {
+        &:after {
+          height: 192px;
+        }
+      }
+      .works-item-tint {
+        &:after {
+          height: 192px;
+        }
+      }
+    }
+  }
+}
+
+@mixin media_320_works_s1 {
+  .works-s1 {
+    .works-item {
+      max-height: 159px;
+      width: 50%;
+      .work-name-wrap {
+        &:after {
+          height: 159px;
+        }
+      }
+      .works-item-tint {
+        &:after {
+          height: 159px;
+        }
+      }
+    }
+  }
+}

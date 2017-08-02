@@ -1,0 +1,149 @@
+header {
+  background-color: $blue-d;
+  height: 93px;
+  .logo-block {
+    float: left;
+    padding: 37px 0 0 11.6%;
+    height: 93px;
+    svg {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .logo-part-1 {
+      width: 95.6px;
+      fill: $blue-l;
+      height: 18.3px;
+    }
+    .logo-part-2 {
+      width: 64.1px;
+      fill: $grey;
+      height: 24px;
+    }
+  }
+  .main-nav {
+    float: right;
+    width: 50%;
+    .menu-list {
+      font-size: 0;
+      line-height: 93px;
+      height: 93px;
+      padding-top: 6px;
+      text-align: right;
+      .menu-item {
+        display: inline-block;
+        color: $grey;
+        @extend %px13;
+        letter-spacing: 0.33px;
+        line-height: 2;
+        margin-left: 7.3%;
+        transition: all .15s linear;
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          margin-top: 5px;
+          background-color: $blue-l;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .2s ease-in;
+        }
+        &:hover {
+          color: $blue-l;
+          &:after {
+            margin-top: 0;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .menu-item.active {
+        color: $blue-l;
+      }
+      .menu-item:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+  .mob-menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 4.16%;
+    width: 60px;
+    height: 72px;
+    z-index: 9999;
+    line-height: 72px;
+    text-align: right;
+    cursor: pointer;
+    .btn-mob-ico {
+      vertical-align: middle;
+      stroke: $grey;
+      stroke-width: 2px;
+      width: 31px;
+      height: 16px;
+    }
+    .btn-mob-close {
+      display: none;
+      width: 19px;
+      height: 19px;
+      margin-right: 8px;
+      vertical-align: middle;
+      stroke-width: 1.5px;
+      stroke: $grey;
+      transform: rotate(0);
+      transition: all .4s linear;
+    }
+    .btn-mob-close-active {
+      transform: rotate(180deg);
+      transition: all .4s linear;
+    }
+  }
+}
+
+@mixin media_768_header {
+  header {
+    height: 72px;
+    .logo-block {
+      float: none;
+      text-align: center;
+      padding: 25px 0 0;
+      height: 72px;
+    }
+    .main-nav {
+      display: none;
+    }
+    .mob-menu-btn {
+      display: block;
+    }
+  }
+}
+
+@mixin media_320_header {
+  header {
+    height: 48px;
+    .logo-block {
+      float: none;
+      text-align: center;
+      padding: 15px 0 0;
+      height: 48px;
+      .logo-part-1 {
+        width: 71.8px;
+        height: 13.8px;
+      }
+      .logo-part-2 {
+        width: 48.1px;
+        height: 18px;
+      }
+    }
+    .main-nav {
+      display: none;
+    }
+    .mob-menu-btn {
+      display: block;
+      right: 5.15%;
+      height: 48px;
+      line-height: 48px;
+    }
+  }
+}

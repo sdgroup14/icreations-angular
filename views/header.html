@@ -1,0 +1,32 @@
+<header>
+    <div class="container clearfix">
+        <div class="logo-block">
+            <a href="index.php">
+                <svg class="icon-box logo-part-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="img/sprite.svg#logo-part-1"></use>
+                </svg>
+                <svg class="icon-box logo-part-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href="img/sprite.svg#logo-part-2"></use>
+                </svg>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="menu-list">
+                <li ng-class="{ 'active': ( CurrentPath == 'about' ) }" class="menu-item"><a href="/about">about us</a></li>
+                <li ng-class="{ 'active': ( CurrentPath == 'capabilities' ) }" class="menu-item"><a href="/capabilities">capabilities</a></li>
+                <li ng-class="{ 'active': ( CurrentPath == 'clients' ) }" class="menu-item"><a href="/clients">clients</a></li>
+                <li ng-class="{ 'active': ( CurrentPath == 'partners' ) }" class="menu-item"><a href="/partners">partners</a></li>
+                <li ng-class="{ 'active': ( CurrentPath == 'works') }" class="menu-item"><a href="/works">works</a></li>
+                <li ng-class="{ 'active': ( CurrentPath == 'contacts') }" class="menu-item"><a href="/contacts">contacts</a></li>
+            </ul>
+        </nav>
+        <span class="mob-menu-btn">
+      <svg class="icon-box logo-part-2 btn-mob-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <use xlink:href="img/sprite.svg#btn-mob"></use>
+      </svg>
+      <svg class="icon-box logo-part-2 btn-mob-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+      </span>
+    </div>
+</header>

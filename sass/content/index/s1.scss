@@ -1,0 +1,114 @@
+.s1 {
+  background-color: $white-d;
+  .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .big-img {
+    float: left;
+    width: 43%;
+    img {
+      display: block;
+      width: 419px;
+      margin: 0 auto;
+    }
+  }
+  .big-img-sign {
+    text-align: right;
+    float: right;
+    width: 57%;
+    margin: 78px 0 0;
+    .sign-h1-block {
+      display: inline-block;
+      position: relative;
+      text-align: right;
+      vertical-align: top;
+      margin-right: 3%;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -13px;
+        width: 35px;
+        height: 1px;
+        background-color: $blue-l;
+      }
+      h1 {
+        @extend %px18;
+        line-height: 22px;
+        letter-spacing: 0.45px;
+        color: $blue-l;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+    .sign-txt-block {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      margin-right: 2%;
+      p {
+        @extend %px13;
+        color: $grey;
+        line-height: 21px;
+        letter-spacing: 0.33px;
+      }
+    }
+  }
+}
+
+@mixin media_768_index_s1 {
+  .s1 {
+    .container {
+      padding-bottom: 43px;
+    }
+    .big-img {
+      float: none;
+      width: 100%;
+    }
+    .big-img-sign {
+      text-align: center;
+      float: none;
+      width: 100%;
+      margin: 35px 0 0;
+    }
+  }
+}
+
+@mixin media_320_index_s1 {
+  .s1 {
+    .container {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+    .big-img {
+      float: none;
+      width: 83%;
+      margin: 0 auto;
+    }
+    .big-img-sign {
+      text-align: center;
+      float: none;
+      width: 100%;
+      margin: 14px 0 0;
+      .sign-h1-block {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 6px;
+        &:after {
+          display: none;
+        }
+      }
+      .sign-txt-block {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+        p {
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
