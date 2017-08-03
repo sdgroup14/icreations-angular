@@ -91,29 +91,57 @@ body,
 
 
 .r-animate {
-    .ng-animate {
+    &.ng-animate {
         transition: all ease 0.2s;
         position: absolute;
     }
-    .ng-enter,
-    .ng-leave {
+    &.ng-enter,
+    &.ng-leave {
         left: 0;
         right: 0;
         transition: all .3s ease-in-out;
     }
-    .ng-enter {
+    &.ng-enter {
         opacity: 0;
+        transition-delay: .7s;
     }
-    .ng-enter-active {
+    &.ng-enter-active {
         opacity: 1;
     }
-    .ng-leave {
+    &.ng-leave {
         opacity: 1;
     }
-    .ng-leave-active {
+    &.ng-leave-active {
         opacity: 0;
     }
+
 }
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+.loddingSvg {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -50px;
+  width: 500px;
+  height: 100px;
+  z-index: 9999;
+  transition: all .15s ease-in-out;
+
+  svg {
+    width: 500px;
+    height: 100px;
+    fill: #021e34;
+  }
+}
+
+
 
 
 

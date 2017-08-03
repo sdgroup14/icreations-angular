@@ -6,14 +6,25 @@
         .config(['$routeProvider', config])
         .controller('CapabilitiesCtrl', CapabilitiesCtrl);
 
-    CapabilitiesCtrl.$inject = ['$scope', '$rootScope'];
+    CapabilitiesCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
-    function CapabilitiesCtrl($scope, $rootScope) {
+    function CapabilitiesCtrl($scope, $rootScope, $timeout) {
         $rootScope.CurrentPath = 'capabilities';
         $rootScope.title = 'iCreations - Capabilities';
         $rootScope.$on("$routeChangeSuccess", function() {
             $('html, body').stop().animate({ scrollTop: 0 }, 150);
         });
+        $rootScope.$on('$routeChangeStart',
+            function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.loadder = true;
+            });
+
+        $rootScope.$on('$routeChangeSuccess',
+            function(event, toState, toParams, fromState, fromParams) {
+                $timeout(function() {
+                    $rootScope.loadder = false;;
+                }, 500);
+            });
     };
 
 

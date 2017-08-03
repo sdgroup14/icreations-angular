@@ -321,27 +321,46 @@ body,
 .br320 {
   display: none; }
 
-.r-animate .ng-animate {
+.r-animate.ng-animate {
   transition: all ease 0.2s;
   position: absolute; }
 
-.r-animate .ng-enter,
-.r-animate .ng-leave {
+.r-animate.ng-enter, .r-animate.ng-leave {
   left: 0;
   right: 0;
   transition: all .3s ease-in-out; }
 
-.r-animate .ng-enter {
-  opacity: 0; }
+.r-animate.ng-enter {
+  opacity: 0;
+  transition-delay: .7s; }
 
-.r-animate .ng-enter-active {
+.r-animate.ng-enter-active {
   opacity: 1; }
 
-.r-animate .ng-leave {
+.r-animate.ng-leave {
   opacity: 1; }
 
-.r-animate .ng-leave-active {
+.r-animate.ng-leave-active {
   opacity: 0; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
+.loddingSvg {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -50px;
+  width: 500px;
+  height: 100px;
+  z-index: 9999;
+  transition: all .15s ease-in-out; }
+  .loddingSvg svg {
+    width: 500px;
+    height: 100px;
+    fill: #021e34; }
 
 header {
   background-color: #021e34;

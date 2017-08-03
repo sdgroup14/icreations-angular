@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     angular
@@ -8,21 +8,32 @@
 
     ClientsCtrl.$inject = ['$scope', '$rootScope'];
 
-    function ClientsCtrl($scope, $rootScope){
-      $rootScope.CurrentPath = 'clients';
-      $rootScope.title = 'iCreations - Clients';
-      $rootScope.$on("$routeChangeSuccess", function () {
-        $('html, body').stop().animate({scrollTop: 0},150);
-      });
+    function ClientsCtrl($scope, $rootScope) {
+        $rootScope.CurrentPath = 'clients';
+        $rootScope.title = 'iCreations - Clients';
+        $rootScope.$on("$routeChangeSuccess", function() {
+            $('html, body').stop().animate({ scrollTop: 0 }, 150);
+        });
+        $rootScope.$on('$routeChangeStart',
+            function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.loadder = true;
+            });
+
+        $rootScope.$on('$routeChangeSuccess',
+            function(event, toState, toParams, fromState, fromParams) {
+                $timeout(function() {
+                    $rootScope.loadder = false;;
+                }, 500);
+            });
     };
 
 
     function config($routeProvider) {
         $routeProvider.
-          when('/clients', {
+        when('/clients', {
             templateUrl: '../views/content/clients.html',
             controller: 'ClientsCtrl'
-          });
+        });
 
     };
 })();

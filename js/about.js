@@ -6,14 +6,26 @@
         .config(['$routeProvider', config])
         .controller('AboutCtrl', AboutCtrl);
 
-    AboutCtrl.$inject = ['$scope', '$rootScope'];
+    AboutCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
-    function AboutCtrl($scope, $rootScope) {
+    function AboutCtrl($scope, $rootScope, $timeout) {
         $rootScope.CurrentPath = 'about';
         $rootScope.title = 'iCreations - About us';
         $rootScope.$on("$routeChangeSuccess", function() {
             $('html, body').stop().animate({ scrollTop: 0 }, 150);
         });
+        $rootScope.$on('$routeChangeStart',
+            function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.loadder = true;
+            });
+
+        $rootScope.$on('$routeChangeSuccess',
+            function(event, toState, toParams, fromState, fromParams) {
+                $timeout(function() {
+                    $rootScope.loadder = false;;
+                }, 500);
+            });
+
     };
 
 

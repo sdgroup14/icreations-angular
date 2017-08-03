@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     angular
@@ -8,21 +8,32 @@
 
     WorksCtrl.$inject = ['$scope', '$rootScope'];
 
-    function WorksCtrl($scope, $rootScope){
-      $rootScope.CurrentPath = 'works';
-      $rootScope.title = 'iCreations - Works';
-      $rootScope.$on("$routeChangeSuccess", function () {
-        $('html, body').stop().animate({scrollTop: 0},150);
-      });
+    function WorksCtrl($scope, $rootScope) {
+        $rootScope.CurrentPath = 'works';
+        $rootScope.title = 'iCreations - Works';
+        $rootScope.$on("$routeChangeSuccess", function() {
+            $('html, body').stop().animate({ scrollTop: 0 }, 150);
+        });
+        $rootScope.$on('$routeChangeStart',
+            function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.loadder = true;
+            });
+
+        $rootScope.$on('$routeChangeSuccess',
+            function(event, toState, toParams, fromState, fromParams) {
+                $timeout(function() {
+                    $rootScope.loadder = false;;
+                }, 500);
+            });
     };
 
 
     function config($routeProvider) {
         $routeProvider.
-          when('/works', {
+        when('/works', {
             templateUrl: '../views/content/works.html',
             controller: 'WorksCtrl'
-          });
+        });
 
     };
 })();
