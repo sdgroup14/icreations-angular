@@ -321,25 +321,26 @@ body,
 .br320 {
   display: none; }
 
-.r-animate.ng-animate {
-  transition: all ease 0.4s;
+.r-animate .ng-animate {
+  transition: all ease 0.2s;
   position: absolute; }
 
-.r-animate.ng-enter, .r-animate.ng-leave {
+.r-animate .ng-enter,
+.r-animate .ng-leave {
   left: 0;
   right: 0;
-  transition: all .5s ease-in-out; }
+  transition: all .3s ease-in-out; }
 
-.r-animate.ng-enter {
+.r-animate .ng-enter {
   opacity: 0; }
 
-.r-animate.ng-enter-active {
+.r-animate .ng-enter-active {
   opacity: 1; }
 
-.r-animate.ng-leave {
+.r-animate .ng-leave {
   opacity: 1; }
 
-.r-animate.ng-leave-active {
+.r-animate .ng-leave-active {
   opacity: 0; }
 
 header {

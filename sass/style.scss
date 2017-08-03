@@ -2,6 +2,7 @@
 @import "libs/_blank";
 @import "libs/_fsize";
 
+
 /*
 ================================================================================
 |                                     reset                                     |
@@ -9,6 +10,7 @@
 */
 
 @import "libs/_reset";
+
 
 /*
 ================================================================================
@@ -18,6 +20,7 @@
 
 @import "libs/_fonts";
 
+
 /*
 ================================================================================
 |                                     Start rools                              |
@@ -25,94 +28,93 @@
 */
 
 .clearfix:after {
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 body {
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
 }
 
 section,
 header {
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
 }
 
 html,
 body,
 .content-wrapper {
-  height: 100%;
+    height: 100%;
 }
 
 .content {
-  width: 100%;
-  min-height: 100%;
-  padding-bottom: 92px;
-  background-color: $white-d;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 92px;
+    background-color: $white-d;
 }
 
 .container {
-  max-width: 1024px;
-  padding: 0 32px;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+    max-width: 1024px;
+    padding: 0 32px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .body-hidden {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .global-hide {
-  transition: all .17s ease-in;
-  transform: scale(.8);
-  opacity: 0;
+    transition: all .17s ease-in;
+    transform: scale(.8);
+    opacity: 0;
 }
 
 .global-show {
-  transform: scale(1);
-  opacity: 1;
+    transform: scale(1);
+    opacity: 1;
 }
 
 .br768,
 .br320 {
-  display: none;
+    display: none;
 }
 
 
-.r-animate.ng-animate {
-  transition: all ease 0.4s;
-  position: absolute;
+.r-animate {
+    .ng-animate {
+        transition: all ease 0.2s;
+        position: absolute;
+    }
+    .ng-enter,
+    .ng-leave {
+        left: 0;
+        right: 0;
+        transition: all .3s ease-in-out;
+    }
+    .ng-enter {
+        opacity: 0;
+    }
+    .ng-enter-active {
+        opacity: 1;
+    }
+    .ng-leave {
+        opacity: 1;
+    }
+    .ng-leave-active {
+        opacity: 0;
+    }
 }
 
-.r-animate.ng-enter, .r-animate.ng-leave {
-    left: 0;
-    right: 0;
-    transition:all .5s ease-in-out;
-}
- 
-.r-animate.ng-enter {
-    opacity: 0;
-}
- 
-.r-animate.ng-enter-active {
-    opacity: 1;
-}
- 
-.r-animate.ng-leave {
-    opacity: 1;
-}
- 
-.r-animate.ng-leave-active {
-    opacity: 0;
-}
 
 
 // HEADER SECTION
@@ -141,127 +143,110 @@ body,
 @import "content/popups/mobile-menu";
 //TABLET
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-  section,
-  nav {
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
-  }
-  .container {
-    max-width: 100%;
-  }
-  .content {
-    // padding-bottom: 92px;
-  }
-  .br1024,
-  .br320 {
-    display: none;
-  }
-  .br768 {
-    display: block;
-  }
-  %sprite-2-1 {
-    display: block;
-    content: '';
-    margin: 0 auto;
-    background: url(../img/sprite-2-1.png);
-    background-size: 247px 204px;
-    background-repeat: no-repeat;
-  }
-  // HEADER SECTION 
-  @include media_768_header;
-  // INDEX SECTIONS
-  @include media_768_index_s1;
-  @include media_768_index_s2;
-  @include media_768_index_s3;
-  // CAPABILITIES SECTIONS
-  @include media_768_capabilities_s1;
-  @include media_768_capabilities_s2;
-  // CLIENTS SECTIONS
-  @include media_768_clients_s1;
-  @include media_768_clients_s2;
-  // CONTACTS SECTIONS
-  @include media_768_contacts_s2;
-  // PARTNERS SECTIONS
-  @include media_768_partners_s1;
-  @include media_768_partners_s2;
-  // WORKS SECTIONS
-  @include media_768_works_s1;
-  // FOOTER SECTIONS
-  @include media_768_footer;
+    section,
+    nav {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 100%;
+    }
+    .content {
+        // padding-bottom: 92px;
+    }
+    .br1024,
+    .br320 {
+        display: none;
+    }
+    .br768 {
+        display: block;
+    }
+    %sprite-2-1 {
+        display: block;
+        content: '';
+        margin: 0 auto;
+        background: url(../img/sprite-2-1.png);
+        background-size: 247px 204px;
+        background-repeat: no-repeat;
+    } // HEADER SECTION 
+    @include media_768_header; // INDEX SECTIONS
+    @include media_768_index_s1;
+    @include media_768_index_s2;
+    @include media_768_index_s3; // CAPABILITIES SECTIONS
+    @include media_768_capabilities_s1;
+    @include media_768_capabilities_s2; // CLIENTS SECTIONS
+    @include media_768_clients_s1;
+    @include media_768_clients_s2; // CONTACTS SECTIONS
+    @include media_768_contacts_s2; // PARTNERS SECTIONS
+    @include media_768_partners_s1;
+    @include media_768_partners_s2; // WORKS SECTIONS
+    @include media_768_works_s1; // FOOTER SECTIONS
+    @include media_768_footer;
 }
 
 @media screen and (max-width: 768px) {
-  section,
-  nav {
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
-  }
-  .container {
-    min-width: 320px;
-    padding: 0 5.15%;
-  }
-  .content {
-    padding-bottom: 169px;
-  }
-  .br1024,
-  .br768,
-  .br768-1024 {
-    display: none;
-  }
-  .br320 {
-    display: block;
-  }
-  %sprite-2-1-m {
-    display: block;
-    content: '';
-    margin: 0 auto;
-    background: url(../img/sprite-2-1.png);
-    background-size: 247px 204px;
-    background-repeat: no-repeat;
-  }
-  // HEADER SECTION   
-  @include media_320_header;
-  // INDEX SECTIONS
-  @include media_320_index_s1;
-  @include media_320_index_s2;
-  @include media_320_index_s3;
-  // CAPABILITIES SECTIONS
-  @include media_320_capabilities_s1;
-  @include media_320_capabilities_s2;
-  // CLIENTS SECTIONS
-  @include media_320_clients_s1;
-  @include media_320_clients_s2;
-  // CONTACTS SECTIONS
-  @include media_320_contacts_s1;
-  @include media_320_contacts_s2;
-  // PARTNERS SECTIONS
-  @include media_320_partners_s1;
-  @include media_320_partners_s2;
-  // WORKS SECTIONS
-  @include media_320_works_s1;
-  //POPUPS SECTIONS
-  @include media_320_mobile_menu;
-  // FOOTER SECTIONS
-  @include media_320_footer;
+    section,
+    nav {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+    .container {
+        min-width: 320px;
+        padding: 0 5.15%;
+    }
+    .content {
+        padding-bottom: 169px;
+    }
+    .br1024,
+    .br768,
+    .br768-1024 {
+        display: none;
+    }
+    .br320 {
+        display: block;
+    }
+    %sprite-2-1-m {
+        display: block;
+        content: '';
+        margin: 0 auto;
+        background: url(../img/sprite-2-1.png);
+        background-size: 247px 204px;
+        background-repeat: no-repeat;
+    } // HEADER SECTION   
+    @include media_320_header; // INDEX SECTIONS
+    @include media_320_index_s1;
+    @include media_320_index_s2;
+    @include media_320_index_s3; // CAPABILITIES SECTIONS
+    @include media_320_capabilities_s1;
+    @include media_320_capabilities_s2; // CLIENTS SECTIONS
+    @include media_320_clients_s1;
+    @include media_320_clients_s2; // CONTACTS SECTIONS
+    @include media_320_contacts_s1;
+    @include media_320_contacts_s2; // PARTNERS SECTIONS
+    @include media_320_partners_s1;
+    @include media_320_partners_s2; // WORKS SECTIONS
+    @include media_320_works_s1; //POPUPS SECTIONS
+    @include media_320_mobile_menu; // FOOTER SECTIONS
+    @include media_320_footer;
 }
 
 @media screen and (max-width: 768px) and (min-width: 550px) {
-  .works-s1 {
-    .works-item {
-      max-height: 205px;
-      width: 50%;
-      .work-name-wrap {
-        &:after {
-          height: 205px;
+    .works-s1 {
+        .works-item {
+            max-height: 205px;
+            width: 50%;
+            .work-name-wrap {
+                &:after {
+                    height: 205px;
+                }
+            }
+            .works-item-tint {
+                &:after {
+                    height: 205px;
+                }
+            }
         }
-      }
-      .works-item-tint {
-        &:after {
-          height: 205px;
-        }
-      }
     }
-  }
 }
