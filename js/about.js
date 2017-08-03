@@ -22,7 +22,7 @@
         $rootScope.$on('$routeChangeSuccess',
             function(event, toState, toParams, fromState, fromParams) {
                 $timeout(function() {
-                    $rootScope.loadder = false;;
+                    $rootScope.loadder = false;
                 }, 500);
             });
 

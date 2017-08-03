@@ -10,7 +10,8 @@
         'icreations.clients',
         'icreations.contacts',
         'icreations.partners',
-        'icreations.works'
+        'icreations.works',
+        'icreations.mob_menu'
     ])
     .config(Config);
 
