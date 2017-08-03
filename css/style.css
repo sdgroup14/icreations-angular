@@ -343,10 +343,6 @@ body,
 .r-animate.ng-leave-active {
   opacity: 0; }
 
-.hidden {
-  display: none !important;
-  visibility: hidden !important; }
-
 .loddingSvg {
   position: fixed;
   left: 50%;

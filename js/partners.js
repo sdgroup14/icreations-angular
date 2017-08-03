@@ -6,9 +6,9 @@
         .config(['$routeProvider', config])
         .controller('PartnersCtrl', PartnersCtrl);
 
-    PartnersCtrl.$inject = ['$scope', '$rootScope'];
+    PartnersCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
-    function PartnersCtrl($scope, $rootScope) {
+    function PartnersCtrl($scope, $rootScope, $timeout) {
         $rootScope.CurrentPath = 'partners';
         $rootScope.title = 'iCreations - Partners';
         $rootScope.$on("$routeChangeSuccess", function() {

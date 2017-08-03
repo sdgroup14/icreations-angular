@@ -6,9 +6,9 @@
         .config(['$routeProvider', config])
         .controller('WorksCtrl', WorksCtrl);
 
-    WorksCtrl.$inject = ['$scope', '$rootScope'];
+    WorksCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
-    function WorksCtrl($scope, $rootScope) {
+    function WorksCtrl($scope, $rootScope, $timeout) {
         $rootScope.CurrentPath = 'works';
         $rootScope.title = 'iCreations - Works';
         $rootScope.$on("$routeChangeSuccess", function() {
