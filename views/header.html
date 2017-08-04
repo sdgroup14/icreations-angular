@@ -20,11 +20,11 @@
                 <li ng-class="{ 'active': ( CurrentPath == 'contacts') }" class="menu-item"><a href="/contacts">contacts</a></li>
             </ul>
         </nav>
-        <span class="mob-menu-btn" ng-click="activeButton()">
-      <svg class="icon-box logo-part-2 btn-mob-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-class="{'active': isActive}">
+        <span ng-click="toggle()" class="mob-menu-btn">
+      <svg class="icon-box logo-part-2 btn-mob-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-class="{'active' : toggleCheck}">
         <use xlink:href="img/sprite.svg#btn-mob"></use>
       </svg>
-      <svg class="icon-box logo-part-2 btn-mob-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-class="{'active': isActive}">
+      <svg class="icon-box logo-part-2 btn-mob-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-class="{'active' : toggleCheck}">
         <use xlink:href="img/sprite.svg#close"></use>
       </svg>
       </span>

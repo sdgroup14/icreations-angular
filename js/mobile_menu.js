@@ -4,32 +4,20 @@
     angular
         .module('icreations.mob_menu', ['ngAnimate'])
         .config([config])
-        .controller('MmenuboutCtrl', MmenuboutCtrl);
+        .controller('MmenuCtrl', MmenuCtrl);
 
-    MmenuboutCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
+    MmenuCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
-    function MmenuboutCtrl($scope, $rootScope, $timeout) {
-        // $rootScope.$on("$routeChangeSuccess", function() {
-        //     $('html, body').stop().animate({ scrollTop: 0 }, 150);
-        // });
-        // $rootScope.$on('$routeChangeStart',
-        //     function(event, toState, toParams, fromState, fromParams) {
-        //         $rootScope.loadder = true;
-        //     });
+    function MmenuCtrl($scope, $rootScope, $timeout) {
+            $scope.toggleCheck = false;
+            $scope.toggle = function() {
+            $scope.toggleCheck = !$scope.toggleCheck;
+            
+            console.log('123');
+ 
 
-        // $rootScope.$on('$routeChangeSuccess',
-        //     function(event, toState, toParams, fromState, fromParams) {
-        //         $timeout(function() {
-        //             $rootScope.loadder = false;;
-        //         }, 500);
-        //     });
-        console.log($scope);
-
-          $rootScope.isActive = false;
-          $scope.activeButton = function() {
-          $rootScope.isActive = !$scope.isActive;
-  }  
-
+    
+    };
     };
 
 

@@ -17,12 +17,14 @@
         $rootScope.$on('$routeChangeStart',
             function(event, toState, toParams, fromState, fromParams) {
                 $rootScope.loadder = true;
+                $('#loader').attr('src', '../img/loader.svg');
             });
 
         $rootScope.$on('$routeChangeSuccess',
             function(event, toState, toParams, fromState, fromParams) {
                 $timeout(function() {
                     $rootScope.loadder = false;
+                    $('#loader').attr('src', '');
                 }, 500);
             });
     };
