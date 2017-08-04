@@ -69,8 +69,11 @@ body,
     position: relative;
 }
 
-.body-hidden {
-    overflow: hidden;
+.body {
+    
+    &.active{
+      overflow: hidden;  
+    }
 }
 
 .global-hide {

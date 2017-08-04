@@ -17,12 +17,14 @@
     <script src="js/partners.js"></script>
     <script src="js/works.js"></script>
     <script src="js/mobile_menu.js"></script>
+    
     <link href="css/style.css" rel="stylesheet">
     <title>{{title}}</title>
 </head>
 
-<body>
+<body class="body" ng-controller="MmenuCtrl" ng-class="{'active' : toggleCheck}">
     <ng-include src="'views/header.html'"></ng-include>
+    <ng-include src="'views/popups/mobile-menu.html'"></ng-include>
     <div class="content-wrapper">
         <div class="content">
             <div class="loddingSvg">
@@ -33,6 +35,7 @@
         <ng-include src="'views/footer.html'"></ng-include>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="js/events.js"></script> -->
 </body>
 
 </html>

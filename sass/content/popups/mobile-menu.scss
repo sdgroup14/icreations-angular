@@ -136,15 +136,15 @@
         visibility: visible;
         transition: all .2s linear;
     }
-}
 
-.mobile-tint-wrapeer-active {
+    &.active {
     overflow: hidden;
     left: 0;
     visibility: visible;
-    overflow-y: visible;
-    overflow-y: scroll;
 }
+}
+
+
 
 @mixin media_320_mobile_menu {
     .mobile-tint-wrapeer {
