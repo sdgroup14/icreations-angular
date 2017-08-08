@@ -308,15 +308,6 @@ body,
 .body.active {
   overflow: hidden; }
 
-.global-hide {
-  transition: all .17s ease-in;
-  transform: scale(0.8);
-  opacity: 0; }
-
-.global-show {
-  transform: scale(1);
-  opacity: 1; }
-
 .br768,
 .br320 {
   display: none; }
@@ -331,8 +322,7 @@ body,
   transition: all .3s ease-in-out; }
 
 .r-animate.ng-enter {
-  opacity: 0;
-  transition-delay: .7s; }
+  opacity: 0; }
 
 .r-animate.ng-enter-active {
   opacity: 1; }
@@ -341,6 +331,27 @@ body,
   opacity: 1; }
 
 .r-animate.ng-leave-active {
+  opacity: 0; }
+
+.r-animate-1.ng-animate {
+  transition: all ease 0.2s;
+  position: absolute; }
+
+.r-animate-1.ng-enter, .r-animate-1.ng-leave {
+  left: 0;
+  right: 0;
+  transition: all .3s ease-in-out; }
+
+.r-animate-1.ng-enter {
+  opacity: 0; }
+
+.r-animate-1.ng-enter-active {
+  opacity: 1; }
+
+.r-animate-1.ng-leave {
+  opacity: 1; }
+
+.r-animate-1.ng-leave-active {
   opacity: 0; }
 
 .loddingSvg {

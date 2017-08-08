@@ -22,10 +22,8 @@
 
         $rootScope.$on('$routeChangeSuccess',
             function(event, toState, toParams, fromState, fromParams) {
-                $timeout(function() {
                     $rootScope.loadder = false;
                     $('#loader').attr('src', '');
-                }, 500);
             });
     };
 
