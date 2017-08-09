@@ -1,5 +1,5 @@
 (function() {
-    'use strict';   123213123
+    'use strict';
 
     angular
         .module('icreations.about', ['ngRoute', 'ngAnimate'])
