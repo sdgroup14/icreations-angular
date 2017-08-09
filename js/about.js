@@ -18,6 +18,10 @@
             function(event, toState, toParams, fromState, fromParams) {
                 $rootScope.loadder = true;
                 $('#loader').attr('src', '../img/loader.svg');
+                var result = document.getElementsByClassName("menu-item");
+                var wrappedResult = angular.element(result);
+                console.log(wrappedResult);
+                console.log(wrappedResult.length);
             });
 
         $rootScope.$on('$routeChangeSuccess',
