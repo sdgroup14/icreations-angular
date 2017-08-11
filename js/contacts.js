@@ -21,8 +21,13 @@
             });
 
         $rootScope.$on('$routeChangeSuccess',
-            function(event, toState, toParams, fromState, fromParams) {
-                    $rootScope.loadder = false;
+     function(event, next, current) {
+                if (states.indexOf(current.$$route.controller) < states.indexOf(next.$$route.controller)) {
+          $rootScope.back = false;
+        } else {
+          $rootScope.back = true;
+        }
+           $rootScope.loadder = false;
                     $('#loader').attr('src', '');
             });
     };

@@ -1,3 +1,4 @@
+var states = ['AboutCtrl', 'CapabilitiesCtrl', 'ClientsCtrl', 'ContactsCtrl', 'PartnersCtrl', 'WorksCtrl'];
 (function() {
     'use strict';
 
@@ -5,6 +6,7 @@
     .module('icreations', [
         'ngRoute',
         'ngAnimate',
+        'icreations.nav',
         'icreations.about',
         'icreations.capabilities',
         'icreations.clients',
@@ -25,6 +27,7 @@
           enabled: true,
           requireBase: false
         });
+
     };
 
 })();

@@ -10,6 +10,7 @@
     <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.6.5/angular-animate.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/nav.js"></script>
     <script src="js/about.js"></script>
     <script src="js/capabilities.js"></script>
     <script src="js/clients.js"></script>
@@ -26,11 +27,11 @@
     <ng-include src="'views/header.html'"></ng-include>
     <ng-include src="'views/popups/mobile-menu.html'"></ng-include>
     <div class="content-wrapper">
-        <div class="content">
+        <div class="content" ng-class="{back: back}">
             <div class="loddingSvg">
                 <img id="loader" src="" alt="">
             </div>
-            <ng-view class="r-animate"></ng-view>
+            <ng-view class="slide-in-right-out-left"></ng-view>
         </div>
         <ng-include src="'views/footer.html'"></ng-include>
     </div>
